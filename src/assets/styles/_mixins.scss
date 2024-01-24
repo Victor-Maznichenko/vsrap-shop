@@ -1,0 +1,31 @@
+@mixin flexItemsCenter() {
+	display: flex;
+	align-items: center;
+}
+
+@mixin slideInDown($duration, $delay) {
+	transform: translateY(-100%);
+	animation: slideInDown $duration forwards $delay;
+
+	@keyframes slideInDown {
+		0% {
+			transform: translateY(-100%);
+		}
+		100% {
+			transform: translateY(0%);
+		}
+	}
+}
+
+@mixin slideOutDown($duration) {
+	animation: slideOutDown $duration forwards;
+
+	@keyframes slideOutDown {
+		0% {
+			transform: translateY(0%);
+		}
+		100% {
+			transform: translateY(-100%);
+		}
+	}
+}

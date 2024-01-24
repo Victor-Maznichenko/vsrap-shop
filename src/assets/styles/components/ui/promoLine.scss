@@ -1,0 +1,48 @@
+@use "../../vars" as *;
+
+.promo-line {
+	display: block;
+	background-color: $black;
+	white-space: nowrap;
+	color: $white;
+
+	&__list {
+		display: flex;
+		align-items: center;
+		padding: 0.813rem 0;
+		column-gap: 2.5rem;
+		animation: infiniteScroll 16.5s linear infinite;
+	}
+
+	&__item {
+		position: relative;
+		font-weight: 600;
+		font-size: 0.875rem;
+		letter-spacing: 1.5px;
+
+		&::after {
+			right: -1.531rem;
+		}
+
+		&::after,
+		&:first-child::before {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 19px;
+			height: 1px;
+			top: 50%;
+			background-color: $white;
+			transform: rotate(-45deg);
+		}
+	}
+}
+
+@keyframes infiniteScroll {
+	0% {
+		transform: translateX(0px);
+	}
+	100% {
+		transform: translateX(-150px);
+	}
+}

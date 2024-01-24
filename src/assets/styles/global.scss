@@ -1,0 +1,19 @@
+@use "reset";
+@use "mixins";
+@use "vars" as *;
+
+body {
+	text-size-adjust: none;
+	font-size: 0.813rem;
+	margin: 0;
+}
+
+.container {
+	max-width: 1170px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.icon-search {
+	stroke: $black;
+}
