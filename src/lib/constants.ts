@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:3200";
+export const BASE_URL = "https://json-server-vsrap.onrender.com";
 export const CARE_RECOMMENDATIONS = {
 	title: "Рекомендации по уходу",
 	contentTitle: "",
