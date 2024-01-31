@@ -40,7 +40,7 @@ const Header = () => {
 					</div>
 				</div>
 			</div>
-			<PromoLine href="/vsrap" text="XMAS PACK" />
+			<PromoLine href="/collections/0" text="XMAS PACK" />
 		</header>
 	);
 };

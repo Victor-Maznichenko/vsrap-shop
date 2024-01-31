@@ -19,7 +19,7 @@ export default async function Home() {
 			</Collections>
 
 			<Products>
-				<h2 className="products__title section-title">Наши товары</h2>
+				<h2 className="section-title">Наши товары</h2>
 				<ProductsList count={8} />
 				<Link href="/products" className="button">
 					Смотреть все

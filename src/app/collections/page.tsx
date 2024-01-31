@@ -7,13 +7,13 @@ export const metadata: Metadata = {
 	description: "Копия сайта vsrap.shop в учебных целях", // аваы аыв вы аываыв а ыва ыва ыа ыва ыва
 };
 
-export default async function CollectionsPage() {
-	return (
-		<main className="collections">
-			<Collections>
-				<h3 className="collections__title section-title">Все коллекции:</h3>
-				<CollectionList />
-			</Collections>
-		</main>
-	);
-}
+const CollectionsPage = () => (
+	<main className="collections">
+		<Collections>
+			<h3 className="collections__title section-title">Все коллекции:</h3>
+			<CollectionList />
+		</Collections>
+	</main>
+);
+
+export default CollectionsPage;
