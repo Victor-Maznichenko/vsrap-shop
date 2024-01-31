@@ -11,14 +11,18 @@ import { CARE_RECOMMENDATIONS } from "@/lib/constants";
 import Accordion from "@/components/ui/accordion";
 import "@/assets/styles/components/ui/products/product.scss";
 
-// type Props = {};
-
 export const metadata: Metadata = {
 	title: "Продукт",
 	description: "Копия сайта vsrap.shop в учебных целях", // аваы аыв вы аываыв а ыва ыва ыа ыва ыва
 };
 
-const Product = async ({ params: { id } }) => {
+type Props = {
+	params: {
+		id: number;
+	};
+};
+
+const Product = async ({ params: { id } }: Props) => {
 	const [product] = await getProductById(id);
 
 	return (
@@ -51,7 +55,7 @@ const Product = async ({ params: { id } }) => {
 							<Accordion
 								title="О товаре"
 								contentTitle={product.about.title}
-								contentText={product.about.text}
+								contentText={product.about.description}
 							/>
 							<Accordion
 								title={CARE_RECOMMENDATIONS.title}
