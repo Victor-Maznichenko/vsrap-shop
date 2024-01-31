@@ -1,13 +1,12 @@
-import Link from "next/link";
-import Image from "next/image";
-import { Metadata } from "next";
-import { IProduct, getProductById, getProducts } from "@/lib/services/getProducts";
-import { CARE_RECOMMENDATIONS } from "@/lib/constants";
-
-import Accordion from "@/components/ui/accordion";
 import "@/assets/styles/components/ui/products/product.scss";
+import Accordion from "@/components/ui/accordion";
 import Products from "@/components/ui/products/products";
 import ProductsList from "@/components/ui/products/productsList";
+import { CARE_RECOMMENDATIONS } from "@/lib/constants";
+import { IProduct, getProductById, getProducts } from "@/lib/services/getProducts";
+import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 
 type Props = {
 	params: {
