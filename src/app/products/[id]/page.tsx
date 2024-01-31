@@ -1,28 +1,26 @@
-import Link from "next/link";
-import Image from "next/image";
-import { Metadata } from "next";
-import {
-	IProduct,
-	getProductById,
-	getProducts,
-} from "@/lib/services/getProducts";
-import { CARE_RECOMMENDATIONS } from "@/lib/constants";
-
-import Accordion from "@/components/ui/accordion";
 import "@/assets/styles/components/ui/products/product.scss";
+import Accordion from "@/components/ui/accordion";
 import Products from "@/components/ui/products/products";
 import ProductsList from "@/components/ui/products/productsList";
-
-export const metadata: Metadata = {
-	title: "Продукт",
-	description: "Копия сайта vsrap.shop в учебных целях", // аваы аыв вы аываыв а ыва ыва ыа ыва ыва
-};
+import { CARE_RECOMMENDATIONS } from "@/lib/constants";
+import { IProduct, getProductById, getProducts } from "@/lib/services/getProducts";
+import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 
 type Props = {
 	params: {
 		id: number;
 	};
 };
+
+export async function generateMetadata({ params: { id } }: Props): Promise<Metadata> {
+	const [product] = await getProductById(id);
+
+	return {
+		title: `${product.title} `,
+	};
+}
 
 const Product = async ({ params: { id } }: Props) => {
 	const [product] = await getProductById(id);
@@ -45,9 +43,7 @@ const Product = async ({ params: { id } }: Props) => {
 								Все товары
 							</Link>
 							<div className="product__prices">
-								<p className="product__current-price">
-									{product.price} ₽
-								</p>
+								<p className="product__current-price">{product.price} ₽</p>
 							</div>
 							<ul className="product__sizes">
 								{product.sizes.map((size, index) => (
@@ -59,9 +55,7 @@ const Product = async ({ params: { id } }: Props) => {
 									</li>
 								))}
 							</ul>
-							<button className="product__cart button-gray">
-								В корзину
-							</button>
+							<button className="product__cart button-gray">В корзину</button>
 							<div className="product__accordions">
 								<Accordion
 									title="О товаре"

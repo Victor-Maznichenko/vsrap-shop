@@ -1,4 +1,6 @@
 "use client";
+
+import Icon from "./icon";
 import "@/assets/styles/components/ui/accordion.scss";
 import { useState } from "react";
 
@@ -13,16 +15,15 @@ const Accordion = ({ title, contentTitle, contentText }: Props) => {
 	const toggleOpen = () => setOpen(!isOpen);
 
 	return (
-		<div className="accordion">
+		<div className={`${isOpen ? "active" : ""} accordion`}>
 			<div className="accordion__top" onClick={toggleOpen}>
 				<h5 className="accordion__title">{title}</h5>
+				<Icon name="arrow-down" />
 			</div>
-			{isOpen && (
-				<div className="accordion__dropdown">
-					<h5 className="accordion__dropdown-title">{contentTitle}</h5>
-					<p className="accordion__dropdown-text">{contentText}</p>
-				</div>
-			)}
+			<div className="accordion__dropdown">
+				<h5 className="accordion__dropdown-title">{contentTitle}</h5>
+				<p className="accordion__dropdown-text">{contentText}</p>
+			</div>
 		</div>
 	);
 };
