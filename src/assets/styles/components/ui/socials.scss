@@ -1,5 +1,22 @@
 @use "../../vars" as *;
 
-.footer {
-	background-color: $darkGray;
+.socials {
+	&__list {
+		display: flex;
+		align-items: center;
+		column-gap: 6px;
+		&-link {
+			display: inline-block;
+			svg {
+				transition: all 0.27s;
+				filter: drop-shadow(2px 4px 6px black);
+			}
+			&:hover svg {
+				fill: #fff;
+			}
+		}
+	}
+	.icon {
+		fill: #525252;
+	}
 }

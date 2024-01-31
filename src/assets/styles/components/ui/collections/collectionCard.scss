@@ -1,0 +1,39 @@
+@use "../../../vars" as *;
+
+.collection-card {
+	display: block;
+	max-width: 276px;
+	min-height: 284px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	padding: 30px;
+	color: $white;
+	width: 100%;
+
+	img {
+		transition: all ease-in-out 0.2s;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.2);
+	}
+
+	&__title {
+		font-size: 18px;
+		font-weight: 600;
+	}
+	&:hover img {
+		transform: scale(1.05);
+	}
+}

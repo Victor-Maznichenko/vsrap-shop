@@ -1,0 +1,22 @@
+.product {
+	&__inner {
+		display: flex;
+		column-gap: 32px;
+	}
+	&__info {
+		width: 30%;
+	}
+	&__photos {
+		width: 70%;
+		display: grid;
+		grid-template: 1fr 1fr / 1fr 1fr;
+		gap: 8px;
+	}
+	&__photo {
+		position: relative;
+		&:first-child {
+			grid-column: span 2;
+			grid-row: span 2;
+		}
+	}
+}

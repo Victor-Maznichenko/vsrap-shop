@@ -19,6 +19,11 @@ export const RFDewiExtended = localFont({
 			style: "normal",
 		},
 		{
+			path: "./files/RFDewiExtended-Bold.woff",
+			weight: "700",
+			style: "normal",
+		},
+		{
 			path: "./files/RFDewiExtended-Ultra.woff",
 			weight: "900",
 			style: "normal",

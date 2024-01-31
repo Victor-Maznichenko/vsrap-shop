@@ -1,0 +1,78 @@
+@use "../../../vars" as *;
+
+.banners {
+	display: grid;
+	grid-template-areas:
+		"collection-1 collection-1"
+		"collection-2 collection-2"
+		"collection-3 collection-3"
+		"collection-4 collection-4"
+		"collection-5 collection-6"
+		"collection-7 collection-7"
+		"collection-8 collection-8"
+		"collection-9 collection-9"
+		"collection-10 collection-10"
+		"collection-11 collection-12"
+		"collection-13 collection-13"
+		"collection-14 collection-15";
+
+	&__item {
+		height: 675px;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+
+		@for $i from 1 through 15 {
+			&:nth-child(#{$i}) {
+				grid-area: collection-#{$i};
+			}
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			z-index: 1;
+			transition: all 0.2s;
+			background-image: linear-gradient(
+				to bottom,
+				rgba(0, 0, 0, 0.2),
+				rgba(0, 0, 0, 0.5)
+			);
+		}
+
+		&-content {
+			z-index: 1;
+			opacity: 0;
+			color: $white;
+			text-align: center;
+			position: relative;
+			transition: all 0.2s;
+		}
+
+		&-title {
+			font-size: 1.25rem;
+			font-weight: 600;
+			line-height: 1.23;
+			margin-bottom: 1.25rem;
+		}
+
+		&:hover {
+			.banners__item-content {
+				opacity: 1;
+			}
+
+			&::before {
+				opacity: 1;
+			}
+		}
+	}
+}

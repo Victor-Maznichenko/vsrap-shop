@@ -1,36 +1,40 @@
 import React from "react";
 import Icon from "./icon";
+import "@/assets/styles/components/ui/socials.scss";
 
-const Socials = () => {
+const Socials = ({ className }: { className: string }) => {
 	return (
-		<div className="socials">
+		<div className={`${className} socials`}>
 			<ul className="socials__list">
-				<li className="socials__item">
+				<li className="socials__list-item">
 					<a
 						href="https://vk.com/one_twwo_three"
-						className="socials__link"
+						className="socials__list-link"
 					>
 						<Icon name={"vk"} width={25} height={25} />
 					</a>
 				</li>
-				<li className="socials__item">
+				<li className="socials__list-item">
 					<a
 						href="https://github.com/victor-maznichenko"
-						className="socials__link"
+						className="socials__list-link"
 					>
 						<Icon name={"github"} width={25} height={25} />
 					</a>
 				</li>
-				<li className="socials__item">
+				<li className="socials__list-item">
 					<a
 						href="mailto:victor_maznichenko@mail.ru"
-						className="socials__link"
+						className="socials__list-link"
 					>
 						<Icon name={"email"} width={25} height={25} />
 					</a>
 				</li>
-				<li className="socials__item">
-					<a href="https://t.me/One_twwo_three" className="socials__link">
+				<li className="socials__list-item">
+					<a
+						href="https://t.me/One_twwo_three"
+						className="socials__list-link"
+					>
 						<Icon name={"telegram"} width={25} height={25} />
 					</a>
 				</li>

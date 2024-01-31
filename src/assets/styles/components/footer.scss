@@ -1,0 +1,28 @@
+@use "../vars" as *;
+
+.footer {
+	background-color: $darkGray;
+	padding: 45px 0;
+	color: $white;
+	&__inner,
+	&__lists {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		width: 100%;
+	}
+	&__logo {
+		margin-bottom: 30px;
+		display: inline-block;
+	}
+	&__socials {
+		margin-bottom: 20px;
+	}
+	&__copyright {
+		color: $gray;
+	}
+	&__company-info {
+		color: $gray;
+		margin-bottom: 42px;
+	}
+}
