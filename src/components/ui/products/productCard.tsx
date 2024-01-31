@@ -1,6 +1,6 @@
-import Link from "next/link";
-import Image from "next/image";
 import "@/assets/styles/components/ui/products/productCard.scss";
+import Image from "next/image";
+import Link from "next/link";
 
 type IProps = {
 	id: number;
@@ -13,7 +13,8 @@ const ProductCard = ({ title, price, images, id }: IProps) => {
 	return (
 		<Link href={`/products/${id}`} className="product-card">
 			<div className="product-card__preview">
-				<Image src={images[0]} width={275} height={275} alt={title} />
+				<Image src={images[0]} fill alt={title} />
+				<Image src={images[1]} fill alt={title} />
 			</div>
 			<h5 className="product-card__title">{title}</h5>
 			<p className="product-card__price">{price} ₽</p>

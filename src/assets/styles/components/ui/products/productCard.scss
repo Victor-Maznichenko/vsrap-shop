@@ -3,7 +3,25 @@
 		font-weight: 300;
 		margin-bottom: 5px;
 	}
+	&__preview {
+		position: relative;
+		width: 275px;
+		height: 275px;
+		img {
+			transition: all 0.2s;
+		}
+		img:last-child {
+			opacity: 0;
+		}
+	}
 	&__price {
 		font-weight: 600;
+	}
+	&:hover {
+		.product-card__preview img {
+			&:last-child {
+				opacity: 1;
+			}
+		}
 	}
 }

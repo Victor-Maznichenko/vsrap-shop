@@ -1,8 +1,8 @@
 "use client";
-import { useState } from "react";
 
-import "@/assets/styles/components/ui/search.scss";
 import Icon from "./icon";
+import "@/assets/styles/components/ui/search.scss";
+import { useState } from "react";
 
 const Search = () => {
 	const [searchActive, setSearchActive] = useState(false);
@@ -13,9 +13,7 @@ const Search = () => {
 
 	return (
 		<form className="search">
-			<div
-				className={`${searchActive ? "show" : "hidden"} search__dropdown`}
-			>
+			<div className={`${searchActive ? "show" : "hidden"} search__dropdown`}>
 				<div className="search__dropdown-inner">
 					<label className="search__label">
 						<input
@@ -28,11 +26,7 @@ const Search = () => {
 							<Icon name="search" width={20} height={20} />
 						</button>
 					</label>
-					<button
-						className="search__btn-close"
-						onClick={toggleSearch}
-						type="button"
-					></button>
+					<button className="search__btn-close" onClick={toggleSearch} type="button"></button>
 				</div>
 			</div>
 			<button className="search__btn-open" onClick={toggleSearch}>

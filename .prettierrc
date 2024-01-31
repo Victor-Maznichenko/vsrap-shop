@@ -7,8 +7,9 @@
 	"arrowParens": "avoid",
 	"singleQuote": false,
 	"endOfLine": "lf",
-	"printWidth": 80,
+	"printWidth": 100,
 	"useTabs": true,
 	"semi": true,
-	"tabWidth": 3
+	"tabWidth": 3,
+	"plugins": ["@trivago/prettier-plugin-sort-imports"]
 }

@@ -1,6 +1,5 @@
-import { ReactNode } from "react";
-
 import "@/assets/styles/components/ui/collections/collections.scss";
+import { ReactNode } from "react";
 
 type IProps = {
 	children: ReactNode;

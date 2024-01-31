@@ -1,11 +1,7 @@
 import Products from "@/components/ui/products/products";
 import type { Metadata } from "next";
 import ProductsList from "@/components/ui/products/productsList";
-
-export const metadata: Metadata = {
-	title: "Коллекция",
-	description: "Копия сайта vsrap.shop в учебных целях", // аваы аыв вы аываыв а ыва ыва ыа ыва ыва
-};
+import { getCollectionById } from "@/lib/services/getCollections";
 
 type Props = {
 	params: {
@@ -13,13 +9,25 @@ type Props = {
 	};
 };
 
-const CollectionPage = ({ params: { id } }: Props) => (
-	<main className="products">
-		<Products>
-			<h2 className="section-title">Коллекция</h2>
-			<ProductsList collectionId={id} />
-		</Products>
-	</main>
-);
+export async function generateMetadata({ params: { id } }: Props): Promise<Metadata> {
+	const [collection] = await getCollectionById(id);
+
+	return {
+		title: `${collection.title} `,
+	};
+}
+
+const CollectionPage = async ({ params: { id } }: Props) => {
+	const [collection] = await getCollectionById(id);
+
+	return (
+		<main className="products">
+			<Products>
+				<h2 className="section-title">{collection.title}</h2>
+				<ProductsList collectionId={id} />
+			</Products>
+		</main>
+	);
+};
 
 export default CollectionPage;
