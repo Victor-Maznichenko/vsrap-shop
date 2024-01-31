@@ -9,7 +9,12 @@ const ProductsList = async ({ count = -1 }) => {
 		<div className="products__list">
 			{products.map(({ images, price, title, id }) => (
 				<div className="products__list-item" key={id}>
-					<ProductCard title={title} images={images} price={price} />
+					<ProductCard
+						title={title}
+						images={images}
+						price={price}
+						id={id}
+					/>
 				</div>
 			))}
 		</div>
