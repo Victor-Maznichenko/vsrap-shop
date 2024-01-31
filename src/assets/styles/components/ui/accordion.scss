@@ -1,0 +1,21 @@
+@use "../../vars" as *;
+
+.accordion {
+	&__title {
+		padding: 10px 5px 10px 0;
+		font-weight: 600;
+		font-size: 0.75rem;
+	}
+	&__top {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+
+		&::after {
+			content: "\25BC";
+			font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+			font-size: 1rem;
+			color: $gray;
+		}
+	}
+}

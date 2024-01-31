@@ -3,6 +3,7 @@
 .footer {
 	background-color: $darkGray;
 	padding: 45px 0;
+	flex: 0 0 auto;
 	color: $white;
 	&__inner,
 	&__lists {

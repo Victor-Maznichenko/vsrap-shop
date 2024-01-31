@@ -1,22 +1,76 @@
+@use "../../../vars" as *;
 .product {
-	&__inner {
-		display: flex;
-		column-gap: 32px;
-	}
+	padding: 40px 0;
 	&__info {
+		position: sticky;
+		top: 162px;
+		right: 0;
 		width: 30%;
 	}
+	&__inner {
+		display: flex;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		column-gap: 80px;
+		margin-bottom: 60px;
+	}
 	&__photos {
-		width: 70%;
-		display: grid;
-		grid-template: 1fr 1fr / 1fr 1fr;
-		gap: 8px;
+		display: flex;
+		align-items: flex-start;
+		width: calc(70% - 80px);
+		flex-wrap: wrap;
+		gap: 32px;
+		margin-bottom: 40px;
 	}
 	&__photo {
 		position: relative;
+		cursor: pointer;
+		min-height: 40vh;
+		width: calc(50% - 16px);
 		&:first-child {
-			grid-column: span 2;
-			grid-row: span 2;
+			row-gap: 32px;
+			width: 90%;
+			min-height: 80vh;
 		}
+	}
+	&__title {
+		margin-bottom: 0.62rem;
+	}
+	&__prices {
+		margin: 0.8rem 0;
+	}
+	&__current-price {
+		font-size: 1.13rem;
+		line-height: 1.3;
+		font-weight: 700;
+	}
+
+	&__sizes {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 1rem;
+		gap: 5px;
+	}
+	&__size {
+		padding: 0.5rem 0.4rem;
+		border: 1px solid $silver;
+		cursor: pointer;
+		transition: all 0.15s ease-out 0s;
+		&.active {
+			color: $white;
+			background-color: $black;
+		}
+		&:hover {
+			box-shadow: 0.12rem 0.06rem 0.625rem rgba($black, 0.2);
+		}
+	}
+	&__cart {
+		width: 100%;
+		margin-bottom: 1.4rem;
+	}
+	&__accordions {
+		display: flex;
+		flex-direction: column;
+		row-gap: 15px;
 	}
 }

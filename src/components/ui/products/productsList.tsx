@@ -1,14 +1,19 @@
-import React from "react";
 import { getProducts } from "@/lib/services/getProducts";
 import ProductCard from "./productCard";
+import "@/assets/styles/components/ui/products/productsList.scss";
 
-const ProductsList = async ({ count = -1 }) => {
-	const products = await getProducts(count);
-
+const ProductsList = async ({
+	count,
+	collectionId,
+}: {
+	count?: number;
+	collectionId?: number;
+}) => {
+	const products = await getProducts(count, collectionId);
 	return (
-		<div className="products__list">
+		<div className="products-list">
 			{products.map(({ images, price, title, id }) => (
-				<div className="products__list-item" key={id}>
+				<div className="products-list__item" key={id}>
 					<ProductCard
 						title={title}
 						images={images}
