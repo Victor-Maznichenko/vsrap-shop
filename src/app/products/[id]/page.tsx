@@ -4,7 +4,7 @@ import Accordion from "@/components/ui/accordion";
 import { getProducts, getProductById } from "@/lib/api/requests";
 import { CARE_RECOMMENDATIONS } from "@/lib/constants";
 import "@/styles/components/productPage.scss";
-import { Product } from "@/types/product";
+import { Product } from "@/types";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
