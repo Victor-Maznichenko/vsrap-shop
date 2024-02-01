@@ -1,5 +1,5 @@
 import { CollectionCardProps } from "@/lib/types";
-import "@/styles/components/collections/CollectionCard.scss";
+import "@/styles/components/collections/collectionCard.scss";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
