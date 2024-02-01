@@ -1,4 +1,4 @@
-import "@/assets/styles/components/ui/promoLine.scss";
+import "@/styles/components/ui/promoLine.scss";
 import Link from "next/link";
 
 interface IProps {

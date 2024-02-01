@@ -1,6 +1,6 @@
-import Products from "@/components/ui/products/products";
+import Products from "@/components/products";
+import ProductsList from "@/components/products/productsList";
 import type { Metadata } from "next";
-import ProductsList from "@/components/ui/products/productsList";
 
 export const metadata: Metadata = {
 	title: "Коллекции",
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 const ProductsPage = () => (
-	<main className="products">
+	<main className="products-page">
 		<Products>
 			<h2 className="section-title">Наши товары</h2>
 			<ProductsList />

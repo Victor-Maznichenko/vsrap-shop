@@ -1,12 +1,12 @@
-import "@/assets/styles/components/ui/collections/collectionBanners.scss";
-import { getCollections } from "@/lib/services/getCollections";
+import { getCollections } from "@/lib/api/requests/getCollections";
+import "@/styles/components/collections/collectionBanners.scss";
 import Image from "next/image";
 import Link from "next/link";
 
-const CollectionBanners = async ({ className }: { className: string }) => {
+const CollectionBanners = async ({ className }: { className?: string }) => {
 	const collections = await getCollections(15);
 	return (
-		<div className={`${className} banners`}>
+		<div className={`${className || ""} banners`}>
 			{collections.map(collection => (
 				<Link
 					key={collection.id}

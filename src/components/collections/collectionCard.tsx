@@ -1,15 +1,10 @@
-import "@/assets/styles/components/ui/collections/collectionCard.scss";
+import { CollectionCardProps } from "@/lib/types";
+import "@/styles/components/collections/CollectionCard.scss";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-type IProps = {
-	title: string;
-	id: number;
-	previewPhoto: string;
-};
-
-const CollectionCard = ({ title, previewPhoto, id }: IProps) => {
+const CollectionCard = ({ title, previewPhoto, id }: CollectionCardProps) => {
 	return (
 		<Link
 			href={`/collections/${id}`}

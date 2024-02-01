@@ -1,5 +1,5 @@
-import CollectionList from "@/components/ui/collections/collectionList";
-import Collections from "@/components/ui/collections/collections";
+import Collections from "@/components/collections";
+import CollectionList from "@/components/collections/collectionList";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

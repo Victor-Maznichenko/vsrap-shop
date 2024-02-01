@@ -1,6 +1,6 @@
-@use "reset";
-@use "mixins";
-@use "vars" as *;
+@import "./reset";
+@import "./vars";
+@import "./mixins";
 
 body {
 	text-size-adjust: none;

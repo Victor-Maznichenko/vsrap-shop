@@ -1,10 +1,10 @@
 import Icon from "./icon";
-import "@/assets/styles/components/ui/socials.scss";
+import "@/styles/components/ui/socials.scss";
 import React from "react";
 
-const Socials = ({ className }: { className: string }) => {
+const Socials = ({ className }: { className?: string }) => {
 	return (
-		<div className={`${className} socials`}>
+		<div className={`${className || ""} socials`}>
 			<ul className="socials__list">
 				<li className="socials__list-item">
 					<a href="https://vk.com/one_twwo_three" className="socials__list-link">

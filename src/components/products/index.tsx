@@ -1,4 +1,4 @@
-import "@/assets/styles/components/ui/products/products.scss";
+import "@/styles/components/products/products.scss";
 import { ReactNode } from "react";
 
 type IProps = {

@@ -1,6 +1,6 @@
-import Products from "@/components/ui/products/products";
-import ProductsList from "@/components/ui/products/productsList";
-import { getCollectionById } from "@/lib/services/getCollections";
+import Products from "@/components/products";
+import ProductsList from "@/components/products/productsList";
+import { getCollectionById } from "@/lib/api/requests";
 import type { Metadata } from "next";
 
 type Props = {

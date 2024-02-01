@@ -1,6 +1,6 @@
 import ProductCard from "./productCard";
-import "@/assets/styles/components/ui/products/productsList.scss";
-import { getProducts } from "@/lib/services/getProducts";
+import { getProducts } from "@/lib/api/requests";
+import "@/styles/components/products/productsList.scss";
 
 const ProductsList = async ({ count, collectionId }: { count?: number; collectionId?: number }) => {
 	const products = await getProducts(count, collectionId);

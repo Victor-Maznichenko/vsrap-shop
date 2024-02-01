@@ -1,7 +1,7 @@
 "use client";
 
 import Icon from "./icon";
-import "@/assets/styles/components/ui/accordion.scss";
+import "@/styles/components/ui/accordion.scss";
 import { useState } from "react";
 
 type Props = {

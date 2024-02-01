@@ -1,4 +1,4 @@
-import "@/assets/styles/components/ui/products/productCard.scss";
+import "@/styles/components/products/productCard.scss";
 import Image from "next/image";
 import Link from "next/link";
 

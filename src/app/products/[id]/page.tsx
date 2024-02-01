@@ -1,9 +1,10 @@
-import "@/assets/styles/components/ui/products/product.scss";
+import Products from "@/components/products";
+import ProductsList from "@/components/products/productsList";
 import Accordion from "@/components/ui/accordion";
-import Products from "@/components/ui/products/products";
-import ProductsList from "@/components/ui/products/productsList";
+import { getProducts, getProductById } from "@/lib/api/requests";
 import { CARE_RECOMMENDATIONS } from "@/lib/constants";
-import { IProduct, getProductById, getProducts } from "@/lib/services/getProducts";
+import "@/styles/components/productPage.scss";
+import { Product } from "@/types/product";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,6 +21,14 @@ export async function generateMetadata({ params: { id } }: Props): Promise<Metad
 	return {
 		title: `${product.title} `,
 	};
+}
+
+export async function generateStaticParams() {
+	const products: Array<Product> = await getProducts();
+
+	return products.map(products => ({
+		slug: products.id,
+	}));
 }
 
 const Product = async ({ params: { id } }: Props) => {
@@ -80,13 +89,5 @@ const Product = async ({ params: { id } }: Props) => {
 		</main>
 	);
 };
-
-export async function generateStaticParams() {
-	const products: Array<IProduct> = await getProducts();
-
-	return products.map(products => ({
-		slug: products.id,
-	}));
-}
 
 export default Product;

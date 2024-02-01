@@ -1,7 +1,7 @@
 "use client";
 
 import Icon from "./icon";
-import "@/assets/styles/components/ui/search.scss";
+import "@/styles/components/ui/search.scss";
 import { useState } from "react";
 
 const Search = () => {
