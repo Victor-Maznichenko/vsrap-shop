@@ -2,17 +2,15 @@ import "@/styles/components/products/products.scss";
 import { ReactNode } from "react";
 
 type IProps = {
-	children: ReactNode;
+  children: ReactNode;
 };
 
-const Products = ({ children }: IProps) => {
-	return (
-		<section className="products">
-			<div className="container">
-				<div className="products__inner">{children}</div>
-			</div>
-		</section>
-	);
-};
+const Products = ({ children }: IProps) => (
+  <section className="products">
+    <div className="container">
+      <div className="products__inner">{children}</div>
+    </div>
+  </section>
+);
 
 export default Products;

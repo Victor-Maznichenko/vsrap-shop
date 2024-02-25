@@ -1,14 +1,15 @@
+import { ICollection } from "@/lib/types";
+
 import { BASE_URL } from "../constants";
-import { Collection } from "@/lib/types";
 
-export const getCollectionById = async (id: number): Promise<Array<Collection>> => {
-	const response = await fetch(`${BASE_URL}/collections?id=${id}`, {
-		next: {
-			revalidate: 30,
-		},
-	});
+export const getCollectionById = async (id: number): Promise<Array<ICollection>> => {
+  const response = await fetch(`${BASE_URL}/collections?id=${id}`, {
+    next: {
+      revalidate: 30,
+    },
+  });
 
-	if (!response.ok) throw new Error("Unable to fetch product.");
+  if (!response.ok) throw new Error("Unable to fetch product.");
 
-	return response.json() as Promise<Array<Collection>>;
+  return response.json() as Promise<Array<ICollection>>;
 };
